@@ -8,6 +8,7 @@ Unit ISBN;
 
 INTERFACE
 
+Function ConvertISBN10ToISBN13(ISBN10:String):String;
 Function IsValidISBN(S:String):Boolean;
 Function To13(ISBN10:String):String;
 
@@ -80,5 +81,16 @@ Begin
  Isbn13:='978'+Copy(Isbn10,1,9);
  To13:=Isbn13+CheckDigit13(Isbn13);
 End;
+
+Function ConvertISBN10ToISBN13(ISBN10:String):String;
+Var
+ Isbn13:String;
+Begin
+ ConvertISBN10ToISBN13:='';
+ If(Length(Isbn10)<>9)and(Length(isbn10)<>10)Then Exit;
+ Isbn13:='978'+Copy(Isbn10,1,9);
+ ConvertISBN10ToISBN13:=Isbn13+CheckDigit13(Isbn13);
+End;
+
 
 END.
