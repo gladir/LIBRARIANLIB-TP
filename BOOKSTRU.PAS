@@ -15,6 +15,7 @@ Type
   ISBN:String[13];
   Title:PChar;
   Author:PChar;
+  Language:PChar;
   NumberPage:LongInt;
   Year:LongInt;
   Subject:PChar;
